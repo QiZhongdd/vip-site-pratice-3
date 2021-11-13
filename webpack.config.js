@@ -1,3 +1,12 @@
+/*
+ * @Author: Ying Zhang
+ * @Date: 2021-11-13 14:45:14
+ * @LastEditTime: 2021-11-13 17:29:06
+ * @LastEditors: Ying Zhang
+ * @Description: 
+ * @FilePath: /vip-site-pratice-3/webpack.config.js
+ * 道阻且长，行则将至
+ */
 const merge = require('webpack-merge');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const {
@@ -78,6 +87,7 @@ const webpackBaseConfig = {
           // 不允许遗留任何“旧的” ServiceWorkers
           clientsClaim: true,
           skipWaiting: true,
+          maximumFileSizeToCacheInBytes: 5000000
         }),
     ]
 }
