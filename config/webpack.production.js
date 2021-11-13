@@ -1,3 +1,12 @@
+/*
+ * @Author: Ying Zhang
+ * @Date: 2021-06-27 16:08:52
+ * @LastEditTime: 2021-11-13 17:08:33
+ * @LastEditors: Ying Zhang
+ * @Description: 
+ * @FilePath: /vip-site-pratice-3/config/webpack.production.js
+ * 道阻且长，行则将至
+ */
 const {
     join,
     resolve
@@ -13,7 +22,7 @@ module.exports = {
     output: {
         assetModuleFilename: "images/[name].[contenthash:5].bundle.[ext]",
         filename: "scripts/[name].[contenthash:5].bundle.js",
-        publicPath: "/assets"
+        publicPath: "/"
     },
     optimization: {
         minimize: true,
