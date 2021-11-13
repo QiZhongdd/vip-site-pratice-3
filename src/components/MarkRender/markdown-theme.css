@@ -1,0 +1,510 @@
+@charset "utf-8";
+
+:root {
+  --active-file-bg-color: #dadada;
+  --active-file-bg-color: rgba(32, 43, 51, 0.63);
+  --active-file-text-color: white;
+  --bg-color: #fff;
+  --text-color: #333;
+  --side-bar-bg-color: #f5f5f5;
+  --control-text-color: #666;
+}
+.content {
+  font: 300 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei",
+    "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+  background: #fff;
+  color: #333;
+  max-width: 960px;
+  padding-top: 2em;
+  padding-left: 60px;
+  padding-right: 60px;
+  min-height: calc(100vh - 6em);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+
+  -webkit-font-smoothing: initial;
+  font-size: 14px;
+  & pre.md-meta-block {
+    background: #f5f5f5;
+    padding: 1em;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  & html.borderbox *,
+  & .content html.borderbox *:before,
+  & .content html.borderbox *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  & .dl,
+  & dt,
+  & dd,
+  & ul,
+  & ol,
+  & li,
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6,
+  & code,
+  & form,
+  & fieldset,
+  & legend,
+  & input,
+  & textarea,
+  & p,
+  & blockquote,
+  & th,
+  & td,
+  & hr,
+  & button,
+  & article,
+  & aside,
+  & details,
+  & figcaption,
+  & figure,
+  & footer,
+  & header,
+  & menu,
+  & nav,
+  & section {
+    margin: 0;
+    padding: 0;
+  }
+  & button,
+  & input,
+  & select,
+  & textarea {
+    font: 300 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei",
+      "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+  }
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-family: "TimesNewRomanPS-ItalicMT", "PingFang SC", "Lantinghei SC",
+      "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif",
+      "WenQuanYi Micro Hei", sans;
+    /*font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;*/
+    -webkit-font-smoothing: initial;
+    font-weight: 100;
+    color: var(--text-color);
+    line-height: 1.35;
+    font-variant-numeric: lining-nums;
+    margin-bottom: 1em;
+  }
+  & em {
+    font-family: Georgia-Italic, STSongti-SC-Light, serif;
+  }
+
+  & strong em,
+  & em strong {
+    font-family: Georgia-BoldItalic, STSongti-SC-Regular, serif;
+  }
+
+  & button::-moz-focus-inner,
+  & input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  /* 去掉各Table cell 的边距并让其边重合 */
+  & table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* 去除默认边框 */
+  & fieldset,
+  & img {
+    border: 0;
+  }
+
+  /* 块/段落引用 */
+  & blockquote {
+    position: relative;
+    color: #999;
+    font-weight: 400;
+    border-left: 4px solid #1abc9c;
+    padding-left: 1em;
+    margin: 1em 3em 1em 2em;
+  }
+
+  /* Firefox 以外，元素没有下划线，需添加 */
+  & acronym,
+  & abbr {
+    border-bottom: 1px dotted;
+    font-variant: normal;
+  }
+
+  /* 添加鼠标问号，进一步确保应用的语义是正确的（要知道，交互他们也有洁癖，如果你不去掉，那得多花点口舌） */
+  & abbr {
+    cursor: help;
+  }
+
+  & address,
+  & caption,
+  & cite,
+  & code,
+  & dfn,
+  & th,
+  & var {
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  /* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+  & ul,
+  & ol {
+    list-style: none;
+  }
+
+  /* 对齐是排版最重要的因素, 别让什么都居中 */
+  & caption,
+  & th {
+    text-align: left;
+  }
+
+  & q:before,
+  & q:after {
+    content: "";
+  }
+
+  /* 统一上标和下标 */
+  & sub,
+  & sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+  }
+
+  :root sub,
+  :root sup {
+    vertical-align: baseline; /* for ie9 and other modern browsers */
+  }
+
+  & sup {
+    top: -0.5em;
+  }
+
+  & sub {
+    bottom: -0.25em;
+  }
+
+  /* 让链接在 hover 状态下显示下划线 */
+  & a {
+    color: #1abc9c;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & a {
+    border-bottom: 1px solid #1abc9c;
+  }
+
+  & a:hover {
+    border-bottom-color: #555;
+    color: #555;
+    text-decoration: none;
+  }
+
+  /* 默认不显示下划线，保持页面简洁 */
+  & ins,
+  & a {
+    text-decoration: none;
+  }
+
+  /* 标记，类似于手写的荧光笔的作用 */
+  & mark {
+    background: #fffdd1;
+    border-bottom: 1px solid #ffedce;
+    padding: 2px;
+    margin: 0 5px;
+  }
+
+  /* 代码片断 */
+  & pre,
+  & code,
+  & pre tt {
+    font-family: Courier, "Courier New", monospace;
+  }
+
+  & .md-fences {
+    border: 1px solid #ddd;
+    padding: 1em 0.5em;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 一致化 horizontal rule */
+  & hr {
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    margin-bottom: 0.8em;
+    height: 10px;
+  }
+
+  & strong {
+    font-weight: bolder;
+    color: #000;
+  }
+
+  & .code-tooltip.md-hover-tip strong {
+    color: white;
+  }
+
+  /* 保证块/段落之间的空白隔行 */
+  & p,
+  & .md-fences,
+  & ul,
+  & ol,
+  & dl,
+  & form,
+  & hr,
+  & figure,
+  & blockquote {
+    margin-bottom: 1.2em;
+  }
+
+  /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    line-height: 1.35;
+    color: #000;
+  }
+
+  & h1 {
+    font-size: 2.4em;
+    padding-bottom: 1em;
+    border-bottom: 3px double #eee;
+  }
+
+  & h2 {
+    font-size: 1.8em;
+  }
+
+  .content h3 {
+    font-size: 1.6em;
+  }
+
+  & h4 {
+    font-size: 1.4em;
+  }
+
+  & h5,
+  & h6 {
+    font-size: 1.2em;
+  }
+
+  /* 在文章中，应该还原 ul 和 ol 的样式 */
+  & ul {
+    margin-left: 1.3em;
+    list-style: disc;
+  }
+
+  & ol {
+    list-style: decimal;
+    margin-left: 1.9em;
+  }
+
+  & li ul,
+  & li ol {
+    margin-bottom: 0.8em;
+    margin-left: 2em;
+  }
+
+  & li ul {
+    list-style: circle;
+  }
+
+  & table th,
+  & table td {
+    border: 1px solid #ddd;
+    padding: 0.5em 1em;
+    color: #666;
+  }
+
+  & table .md-table-edit th {
+    border: none;
+    padding: 0;
+    color: inherit;
+  }
+
+  & table th {
+    background: #fbfbfb;
+  }
+
+  & table thead th {
+    background: #f1f1f1;
+  }
+
+  & table caption {
+    border-bottom: none;
+  }
+
+  & em {
+    font-weight: inherit;
+    font-style: inherit;
+  }
+
+  & li > p {
+    margin-bottom: 0 !important;
+  }
+
+  /* Responsive images */
+  & img {
+    max-width: 100%;
+  }
+
+  & a.md-toc-inner {
+    border-bottom: 0 !important;
+  }
+
+  & .md-toc-h1:first-of-type:last-of-type {
+    display: none;
+  }
+
+  & .md-toc {
+    font-size: inherit;
+  }
+
+  & .md-toc-h1 .md-toc-inner {
+    font-weight: normal;
+  }
+
+  & .md-table-edit th {
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  & .btn-primary {
+    background-color: #2d2d2d;
+    border-color: #020202;
+  }
+
+  & .btn-primary:hover,
+  & .btn-primary:focus,
+  & .btn-primary.focus,
+  & .btn-primary:active,
+  & .btn-primary.active,
+  & .open > .dropdown-toggle.btn-primary {
+    background-color: #4e4c4e;
+    border: #4e4c4e;
+  }
+
+  & #preference-dialog .modal-content {
+    background: #6e757a;
+    --bg-color: #6e757a;
+    --text-color: #f1f1f1;
+    color: #f1f1f1;
+  }
+}
+
+.code {
+  display: block;
+  padding: 20rpx 20rpx !important;
+  border-radius: 10rpx;
+  margin: 4px 0 0 0 !important;
+  background: #1e1e1e;
+  color: #dcdcdc;
+  overflow-y: hidden !important;
+  overflow-x: auto !important;
+  font-family: Menlo, Consolas, "Courier New", Courier, FreeMono, monospace !important;
+  white-space: pre;
+
+  * {
+    font-size: 14px;
+    font-family: Menlo, Consolas, "Courier New", Courier, FreeMono, monospace !important;
+  }
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}

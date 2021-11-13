@@ -1,0 +1,144 @@
+/* media */
+@custom-media --vsmaller (width < 767px);
+@custom-media --vsmall (width >= 768px) and (width <= 991px);
+@custom-media --vmid (width >= 992px) and (width <= 1199px);
+@custom-media --vbig (width> 1200px);
+:root {
+  /* 字体颜色 */
+  --fColor: #ac9455;
+  --fWhite: #fff;
+  --fBlack: #000;
+  --actFColor: #f6f6f6;
+  --infoFColor: #898989;
+  --disableFcolor: #4a4a4a;
+
+  /* 字体大小 */
+  --fSize: 14px;
+  --fSizeMid: 14px;
+  --navFSize: 16px;
+  --tilFSize: 16px;
+
+  /* 背景颜色 */
+  --bgColor: #131313;
+  --actBgColor: #1a1a1a;
+  --infoBgColor: #000;
+  --infoBgWite: #fff;
+  --bgBlack: #000;
+
+  /* 阴影颜色 */
+  --shadowBlackColor: #000;
+
+  /* 边框 */
+  --borderColor: #ac9455;
+  --borderRadius_2: 2px;
+  --borderRadius_8: 8px;
+
+  /* button */
+  --btnColor: #ac9455;
+  --btnAct: #ffffff;
+
+  /* 其它 */
+  --disable: #cdcdcd;
+}
+@font-face {
+  font-family: "custom1";
+  src: url("./assets/font/f1.woff") format("woff");
+}
+/* 阿里云图标 */
+@font-face {
+  font-family: "iconfont"; /* project id 2318876 */
+  src: url("//at.alicdn.com/t/font_2318876_bfcltxiru9.eot");
+  src: url("//at.alicdn.com/t/font_2318876_bfcltxiru9.eot?#iefix")
+      format("embedded-opentype"),
+    url("//at.alicdn.com/t/font_2318876_bfcltxiru9.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_2318876_bfcltxiru9.woff") format("woff"),
+    url("//at.alicdn.com/t/font_2318876_bfcltxiru9.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_2318876_bfcltxiru9.svg#iconfont") format("svg");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--bgColor);
+  color: var(--fColor);
+  font-size: var(--fSize);
+  font-family: "custom1";
+  font-display: auto;
+  background: url("./assets/images/bg2.jpg") no-repeat center top;
+  background-size: cover;
+}
+#main {
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 70px;
+  overflow: hidden;
+  position: relative;
+}
+.layout-container {
+  min-width: 990px;
+  width: 100%;
+  padding: 0 6%;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-color: linear-gradient(to bottom, #ff8a00, #da1b60);
+  scrollbar-width: 30px;
+  /* background: #100e17;
+  color: #fff; */
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff8a00, #da1b60);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  /* box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25); */
+}
+html::-webkit-scrollbar-track {
+  background: linear-gradient(
+    to right,
+    #201c29,
+    #201c29 1px,
+    #100e17 1px,
+    #100e17
+  );
+}
+.copyright {
+  width: 100%;
+  color: #666;
+  text-align: center;
+  font-size: 14px;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.md-back-btn {
+  width: 60px;
+  padding: 15px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: all 0.03s;
+  &:active {
+    transform: scale(0.9);
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}

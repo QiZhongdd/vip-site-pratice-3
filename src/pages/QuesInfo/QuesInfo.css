@@ -1,0 +1,27 @@
+.ques-info {
+  margin: auto;
+  position: relative;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 45px;
+  & .btn-box {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    font-size: 16px;
+    position: fixed;
+    left: 4%;
+    top: 65px;
+    z-index: 2;
+    & > div {
+      margin: 0 16px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &.disable {
+        color: var(--disableFcolor);
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.sort-nav-box {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  text-shadow: 1px 1px 2px var(--fColor);
+  font-size: 16px;
+  margin: 14px 0;
+  & > li {
+    cursor: pointer;
+    margin-right: 12px;
+    transition: all 0.2s;
+    position: relative;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.item-act {
+      color: var(--actFColor);
+      text-shadow: 1px 1px 2px var(--actFColor);
+      &:after {
+        content: "";
+        display: block;
+        width: 70%;
+        height: 2px;
+        background: var(--infoBgWite);
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: var(--borderRadius_2);
+      }
+    }
+  }
+}
